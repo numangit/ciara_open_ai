@@ -11,6 +11,7 @@ let loadInterval;
 const loader = (element) => {
   element.textContent = '';
 
+  //to render 3 dots one by one
   loadInterval = setInterval(() => {
     element.textContent += '.';
 
@@ -20,3 +21,18 @@ const loader = (element) => {
 
   }, 300);
 };
+
+//function show typing animation
+const typingText = (element, text) => {
+  let i = 0;
+
+  //to show each characters after 20ms
+  let interval = setInterval(() => {
+    if (i < text.length) {
+      element.innerHTML += text.charAt(i);
+      1++;
+    } else {
+      clearInterval(interval);
+    }
+  }, 20);
+}
