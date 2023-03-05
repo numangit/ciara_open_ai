@@ -33,6 +33,16 @@ const typingText = (element, text) => {
       1++;
     } else {
       clearInterval(interval);
-    }
+    };
+
   }, 20);
+};
+
+//function to generate UID
+const generateUid = () => {
+  const timestamp = Date.now();
+  const randomNumber = Math.random();
+  const hexadecimalString = randomNumber.toString(36);
+
+  return `id-${timestamp}-${hexadecimalString}`;
 }
