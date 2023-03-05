@@ -45,4 +45,19 @@ const generateUid = () => {
   const hexadecimalString = randomNumber.toString(36);
 
   return `id-${timestamp}-${hexadecimalString}`;
-}
+};
+
+//function to generate chat strips
+const chatStripe = (isAi, message, uniqueId) => {
+  return (
+    `
+      <div class="wrapper ${isAi && 'ai'}">
+        <div class="chat">
+          <div class="profile">
+           <img src="${isAi ? bot : user}" alt="">
+          </div>
+        </div>
+      </div>
+    `
+  )
+};
